@@ -31556,6 +31556,11 @@ static void ma_context_get_device_info_sink_callback__pulse(ma_pa_context* pPuls
     }
 
     MA_ASSERT(pData != NULL);
+
+    if (pInfo == NULL) {
+        return;
+    }
+
     pData->foundDevice = MA_TRUE;
 
     if (pInfo->name != NULL) {
@@ -31593,6 +31598,11 @@ static void ma_context_get_device_info_source_callback__pulse(ma_pa_context* pPu
     }
 
     MA_ASSERT(pData != NULL);
+
+    if (pInfo == NULL) {
+        return;
+    }
+
     pData->foundDevice = MA_TRUE;
 
     if (pInfo->name != NULL) {
